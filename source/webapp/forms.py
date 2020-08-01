@@ -11,5 +11,3 @@ class BookForm(forms.Form):
                              widget=forms.TextInput(attrs={'placeholder': 'Email Address'}))
     text = forms.CharField(max_length=3000, required=True, label="Текст",
                            widget=forms.Textarea)
-    status = forms.ChoiceField(choices=STATUS_CHOICES, required=True, label='Статус',
-                               initial=default_status)
