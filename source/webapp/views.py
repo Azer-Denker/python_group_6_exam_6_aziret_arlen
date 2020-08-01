@@ -36,7 +36,7 @@ def book_create_view(request):
                 title=form.cleaned_data['title'],
                 author=form.cleaned_data['author'],
                 text=form.cleaned_data['text'],
-                status=['active'],
+                status='active'
             )
             return redirect('book_view', pk=book.pk)
         else:
