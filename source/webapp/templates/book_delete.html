@@ -12,7 +12,8 @@
         {% csrf_token %}
         <p><input type="submit" value="Да" style="
     margin-right: 5px;
-"> или <a href="{% url 'book_view' book.pk %}"><img src="https://img.icons8.com/android/24/000000/cancel.png" style="
+"> или <a href="{% url 'book_view' book.pk %}">
+            <img src="https://img.icons8.com/android/24/000000/cancel.png" style="
     margin-left: 5px;
 "/></a></p>
     </form>
