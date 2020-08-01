@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}Book{% endblock %}
+{% block title %}View{% endblock %}
 
 {% block content %}
-    <h1>Гостевая книга</h1>
-    {% for book in books %}
-        <div style="border: 3px solid #000000; border-radius: 25px; width: 40%;">
+    <div style="border: 3px solid #000000; border-radius: 25px; width: 40%;">
             <h3 style="margin-left: 10px;">{{ book.title }}({{ book.author }})
                 <a href="{% url 'book_delete' book.pk %}"><img src="https://img.icons8.com/ios/64/000000/remove-property.png" style="
     width: 35px;
@@ -18,5 +16,4 @@
 "/></a></h3>
             <p style="margin-left: 5px;">{{ book.text }}</p>
         </div>
-    {% endfor %}
 {% endblock %}

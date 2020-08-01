@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Update{% endblock %}
+
+{% block content %}
+    <h1>Update Book</h1>
+
+    {% url "book_update" pk=book.pk as action_url %}
+    {% include 'partial/form.html' with action_url=action_url form_method='post' button_text='Update' %}<p><a href="{% url 'book_view' book.pk %}">Отмена<img src="https://img.icons8.com/android/24/000000/cancel.png"/></a></p>
+{% endblock %}

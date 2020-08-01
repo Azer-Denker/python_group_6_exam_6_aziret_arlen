@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+    <h1>Вы уверены, что хотите удалить книгу "{{ book.title }}"?</h1>
+    <div style="border: 3px solid #000000; border-radius: 25px; width: 30%;">
+            <h3 style="margin-left: 10px;">{{ book.title }}({{ book.author }})</h3>
+            <p style="margin-left: 5px;">{{ book.text }}</p>
+        </div>
+    <form action="{% url "book_delete" book.pk %}" method="post">
+        {% csrf_token %}
+        <p><input type="submit" value="Да" style="
+    margin-right: 5px;
+"> или <a href="{% url 'book_view' book.pk %}"><img src="https://img.icons8.com/android/24/000000/cancel.png" style="
+    margin-left: 5px;
+"/></a></p>
+    </form>
+{% endblock %}
